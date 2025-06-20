@@ -5,16 +5,102 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rayan Thermal Paper Roll</title>
   <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       background: #f4f4f4;
-      color: #333;
-      line-height: 1.6;
+    }
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #0056b3;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      padding: 60px 20px;
+      text-align: center;
+      background: url('https://images.unsplash.com/photo-1616963247603-923c1d8fc4e9?auto=format&fit=crop&w=1280&q=80') center/cover no-repeat;
+      color: white;
+    }
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+    .hero button {
+      padding: 12px 24px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .section {
+      padding: 40px 20px;
+      background: #ffffff;
+      margin: 20px auto;
+      max-width: 1000px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+    .products-grid {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .product-card {
+      width: 280px;
+      background: #f9f9f9;
+      padding: 15px;
+      border: 1px solid #ccc;
+      text-align: center;
+      border-radius: 6px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+    .product-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+    .badges {
+      display: flex;
+      justify-content: space-around;
+      background: #e9f5ff;
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      border-radius: 8px;
+    }
+    .badge {
+      text-align: center;
+      font-weight: bold;
+      font-size: 16px;
+      color: #007bff;
+    }
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
     }
     a {
       color: #007bff;
@@ -23,199 +109,10 @@
     a:hover {
       text-decoration: underline;
     }
-    header {
-      background-color: #007bff;
-      color: white;
-      padding: 20px 15px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.2rem;
-    }
-    header p {
-      margin: 8px 0 0;
-      font-weight: 500;
-    }
-    nav {
-      background: #0056b3;
-      text-align: center;
-      padding: 12px 0;
-    }
-    nav a {
-      color: white;
-      margin: 0 18px;
-      font-weight: 600;
-      font-size: 1rem;
-      padding: 6px 12px;
-      display: inline-block;
-      transition: background-color 0.3s ease;
-      border-radius: 4px;
-    }
-    nav a:hover,
-    nav a:focus {
-      background-color: #003d80;
-      outline: none;
-    }
-    .hero {
-      padding: 80px 20px;
-      text-align: center;
-      background: url('https://images.unsplash.com/photo-1590080877777-87a5d3241e3b?auto=format&fit=crop&w=1280&q=80') center/cover no-repeat;
-      color: white;
-      position: relative;
-    }
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.45);
-      z-index: 0;
-    }
-    .hero h1,
-    .hero p,
-    .hero button {
-      position: relative;
-      z-index: 1;
-    }
-    .hero h1 {
-      font-size: 2.8rem;
-      margin-bottom: 12px;
-    }
-    .hero p {
-      font-size: 1.25rem;
-      margin-bottom: 28px;
-      font-weight: 500;
-    }
-    .hero button {
-      background-color: #28a745;
-      border: none;
-      color: white;
-      padding: 14px 32px;
-      font-size: 1.1rem;
-      cursor: pointer;
-      border-radius: 6px;
-      transition: background-color 0.3s ease;
-    }
-    .hero button:hover,
-    .hero button:focus {
-      background-color: #218838;
-      outline: none;
-    }
-    .badges {
-      max-width: 900px;
-      margin: 40px auto 20px;
-      display: flex;
-      justify-content: space-around;
-      background: #e9f5ff;
-      padding: 24px 15px;
-      border-radius: 10px;
-      gap: 15px;
-      flex-wrap: wrap;
-      font-weight: 600;
-      color: #007bff;
-      font-size: 1.1rem;
-    }
-    .badge {
-      flex: 1 1 180px;
-      text-align: center;
-      background: white;
-      border-radius: 8px;
-      padding: 12px 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      user-select: none;
-    }
-    .section {
-      max-width: 1000px;
-      background: white;
-      margin: 30px auto;
-      padding: 40px 30px;
-      border-radius: 12px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    }
-    .section h2 {
-      font-size: 2rem;
-      margin-bottom: 24px;
-      color: #0056b3;
-      text-align: center;
-    }
-    .products-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 25px;
-      justify-content: center;
-    }
-    .product-card {
-      background: #f9f9f9;
-      border-radius: 10px;
-      width: 280px;
-      padding: 20px;
-      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .product-card:hover,
-    .product-card:focus-within {
-      transform: translateY(-7px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-      outline: none;
-    }
-    .product-card img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      margin-bottom: 16px;
-      object-fit: contain;
-    }
-    .product-card h3 {
-      margin: 0 0 10px;
-      font-size: 1.25rem;
-      color: #007bff;
-    }
-    .product-card p {
-      margin: 0;
-      font-size: 1rem;
-      color: #444;
-    }
-    #contact p {
-      font-size: 1.1rem;
-      margin: 12px 0;
-      text-align: center;
-    }
-    #contact strong {
-      color: #007bff;
-    }
-    #contact a {
-      font-weight: 700;
-      color: #28a745;
-    }
-    #contact a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 20px 15px;
-      font-size: 0.95rem;
-      margin-top: 60px;
-    }
-    @media (max-width: 768px) {
-      nav a {
-        margin: 0 10px;
-        font-size: 0.95rem;
-      }
-      .products-grid {
-        gap: 20px;
-      }
-      .product-card {
-        width: 100%;
-        max-width: 350px;
-        margin: 0 auto;
-      }
-    }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Rayan Thermal Paper Roll</h1>
     <p>High-Quality POS Thermal Paper Supplies – Fast Delivery in Kenya</p>
@@ -227,71 +124,55 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <section class="hero" role="banner" aria-label="Hero Section with call to action">
+  <section class="hero">
     <h1>Your Trusted Thermal Paper Supplier</h1>
     <p>Affordable. Reliable. Delivered to your door.</p>
-    <button onclick="window.location.href='#contact'" aria-label="Order Now via WhatsApp">Order Now via WhatsApp</button>
+    <button onclick="window.location.href='https://wa.me/254713171865?text=Hello%2C%20I%20am%20interested%20in%20thermal%20paper%20rolls'">
+      Order Now via WhatsApp
+    </button>
   </section>
 
-  <section class="badges" aria-label="Key Service Benefits">
+  <section class="badges">
     <div class="badge">✅ Free Delivery</div>
     <div class="badge">💵 Best Price Guarantee</div>
     <div class="badge">📦 Bulk Orders Available</div>
   </section>
 
-  <section id="products" class="section" aria-label="Our Products">
+  <section id="products" class="section">
     <h2>Our Products</h2>
     <div class="products-grid">
-      <div class="product-card" tabindex="0">
-        <img src="https://images.unsplash.com/photo-1582576423039-3850961a2b8c?auto=format&fit=crop&w=640&q=80" alt="57x40mm POS Thermal Roll" />
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1602526216432-cffcb3d7ba3b?auto=format&fit=crop&w=600&q=60" alt="57x40mm POS Roll" />
         <h3>57x40mm POS Roll</h3>
         <p>Standard for supermarkets, shops & MPESA</p>
-        <button
-          style="margin-top:15px; padding: 10px 15px; background-color: #28a745; color: white; border:none; border-radius:5px; cursor:pointer;"
-          onclick="sendWhatsAppMessage('57x40mm POS Roll')"
-          aria-label="Order 57x40mm POS Roll via WhatsApp"
-        >
-          Order via WhatsApp
-        </button>
+        <a href="https://wa.me/254713171865?text=I%20want%2057x40mm%20POS%20Roll">Order via WhatsApp</a>
       </div>
-      <div class="product-card" tabindex="0">
-        <img src="https://images.unsplash.com/photo-1519337265831-281ec6cc8514?auto=format&fit=crop&w=640&q=80" alt="80x80mm POS Roll" />
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1574395771464-5c2b4c212d6e?auto=format&fit=crop&w=600&q=60" alt="80x80mm POS Roll" />
         <h3>80x80mm POS Roll</h3>
         <p>Ideal for busy retail or restaurant printers</p>
-        <button
-          style="margin-top:15px; padding: 10px 15px; background-color: #28a745; color: white; border:none; border-radius:5px; cursor:pointer;"
-          onclick="sendWhatsAppMessage('80x80mm POS Roll')"
-          aria-label="Order 80x80mm POS Roll via WhatsApp"
-        >
-          Order via WhatsApp
-        </button>
+        <a href="https://wa.me/254713171865?text=I%20want%2080x80mm%20POS%20Roll">Order via WhatsApp</a>
       </div>
-      <div class="product-card" tabindex="0">
-        <img src="https://images.unsplash.com/photo-1579656594169-08b1d956f4b2?auto=format&fit=crop&w=640&q=80" alt="Bulk Boxes Thermal Paper Rolls" />
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1583337130417-3346a1a4a61d?auto=format&fit=crop&w=600&q=60" alt="Bulk Boxes" />
         <h3>Bulk Boxes (50 rolls)</h3>
         <p>Wholesale prices with delivery across Kenya</p>
-        <button
-          style="margin-top:15px; padding: 10px 15px; background-color: #28a745; color: white; border:none; border-radius:5px; cursor:pointer;"
-          onclick="sendWhatsAppMessage('Bulk Boxes (50 rolls)')"
-          aria-label="Order Bulk Boxes (50 rolls) via WhatsApp"
-        >
-          Order via WhatsApp
-        </button>
+        <a href="https://wa.me/254713171865?text=I%20want%20Bulk%20Boxes%20of%20Thermal%20Rolls">Order via WhatsApp</a>
       </div>
     </div>
   </section>
 
-  <section id="about" class="section" aria-label="About Rayan Thermal Paper Roll">
+  <section id="about" class="section">
     <h2>About Rayan</h2>
     <p>
       Rayan Thermal Paper Roll is a Kenyan supplier focused on delivering top-quality thermal paper rolls for POS machines, ATMs, and printers. We prioritize quality, fast delivery, and customer satisfaction. Our clients range from supermarkets and shops to pharmacies and hotels across Kenya.
     </p>
   </section>
 
-  <section id="contact" class="section" aria-label="Contact and Orders">
+  <section id="contact" class="section">
     <h2>Contact & Orders</h2>
     <p>📞 Call us: <strong>0713 171 865</strong></p>
-    <p>📱 WhatsApp: <strong><a href="https://wa.me/254713171865" target="_blank" rel="noopener noreferrer">Click to Chat</a></strong></p>
+    <p>📱 WhatsApp: <strong><a href="https://wa.me/254713171865" target="_blank" rel="noopener">Click to Chat</a></strong></p>
     <p>📧 Email: <strong>rayanthermalrolls@gmail.com</strong></p>
     <p>📍 Location: Nairobi, Kenya</p>
   </section>
@@ -300,13 +181,6 @@
     <p>&copy; 2025 Rayan Thermal Paper Roll. All rights reserved.</p>
   </footer>
 
-  <script>
-    function sendWhatsAppMessage(product) {
-      const phoneNumber = "254713171865";
-      const message = encodeURIComponent(`Hello, I am interested in ordering the product: ${product}`);
-      const url = `https://wa.me/${phoneNumber}?text=${message}`;
-      window.open(url, "_blank");
-    }
-  </script>
 </body>
 </html>
+
