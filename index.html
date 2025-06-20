@@ -60,7 +60,7 @@
     .hero {
       padding: 80px 20px;
       text-align: center;
-      background: url('https://cdn.pixabay.com/photo/2016/10/24/13/30/thermal-paper-1768461_1280.jpg') center/cover no-repeat;
+      background: url('https://images.unsplash.com/photo-1590080877777-87a5d3241e3b?auto=format&fit=crop&w=1280&q=80') center/cover no-repeat;
       color: white;
       position: relative;
     }
@@ -243,7 +243,7 @@
     <h2>Our Products</h2>
     <div class="products-grid">
       <div class="product-card" tabindex="0">
-        <img src="https://cdn.pixabay.com/photo/2021/01/22/20/10/receipt-5940849_640.jpg" alt="57x40mm POS Thermal Roll" />
+        <img src="https://images.unsplash.com/photo-1582576423039-3850961a2b8c?auto=format&fit=crop&w=640&q=80" alt="57x40mm POS Thermal Roll" />
         <h3>57x40mm POS Roll</h3>
         <p>Standard for supermarkets, shops & MPESA</p>
         <button
@@ -255,7 +255,7 @@
         </button>
       </div>
       <div class="product-card" tabindex="0">
-        <img src="https://cdn.pixabay.com/photo/2017/08/30/07/52/receipt-2698847_640.jpg" alt="80x80mm POS Roll" />
+        <img src="https://images.unsplash.com/photo-1519337265831-281ec6cc8514?auto=format&fit=crop&w=640&q=80" alt="80x80mm POS Roll" />
         <h3>80x80mm POS Roll</h3>
         <p>Ideal for busy retail or restaurant printers</p>
         <button
@@ -267,7 +267,7 @@
         </button>
       </div>
       <div class="product-card" tabindex="0">
-        <img src="https://cdn.pixabay.com/photo/2016/10/24/13/30/thermal-paper-1768461_640.jpg" alt="Bulk Boxes Thermal Paper Rolls" />
+        <img src="https://images.unsplash.com/photo-1579656594169-08b1d956f4b2?auto=format&fit=crop&w=640&q=80" alt="Bulk Boxes Thermal Paper Rolls" />
         <h3>Bulk Boxes (50 rolls)</h3>
         <p>Wholesale prices with delivery across Kenya</p>
         <button
@@ -301,13 +301,11 @@
   </footer>
 
   <script>
-    function sendWhatsAppMessage(productName) {
-      const phone = '254713171865'; // Updated phone number without the leading zero
-      const message = encodeURIComponent(
-        `Hello, I am interested in ordering the product: ${productName}. Please provide more details.`
-      );
-      const url = `https://wa.me/${phone}?text=${message}`;
-      window.open(url, '_blank');
+    function sendWhatsAppMessage(product) {
+      const phoneNumber = "254713171865";
+      const message = encodeURIComponent(`Hello, I am interested in ordering the product: ${product}`);
+      const url = `https://wa.me/${phoneNumber}?text=${message}`;
+      window.open(url, "_blank");
     }
   </script>
 </body>
