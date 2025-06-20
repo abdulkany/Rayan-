@@ -284,7 +284,31 @@
   <section id="about" class="section" aria-label="About Rayan Thermal Paper Roll">
     <h2>About Rayan</h2>
     <p>
-      Rayan Thermal Paper Roll is a Kenyan supplier focused on delivering top-quality thermal paper rolls for POS machines, ATMs
+      Rayan Thermal Paper Roll is a Kenyan supplier focused on delivering top-quality thermal paper rolls for POS machines, ATMs, and printers. We prioritize quality, fast delivery, and customer satisfaction. Our clients range from supermarkets and shops to pharmacies and hotels across Kenya.
+    </p>
+  </section>
 
+  <section id="contact" class="section" aria-label="Contact and Orders">
+    <h2>Contact & Orders</h2>
+    <p>📞 Call us: <strong>0713 171 865</strong></p>
+    <p>📱 WhatsApp: <strong><a href="https://wa.me/254713171865" target="_blank" rel="noopener noreferrer">Click to Chat</a></strong></p>
+    <p>📧 Email: <strong>rayanthermalrolls@gmail.com</strong></p>
+    <p>📍 Location: Nairobi, Kenya</p>
+  </section>
 
+  <footer>
+    <p>&copy; 2025 Rayan Thermal Paper Roll. All rights reserved.</p>
+  </footer>
 
+  <script>
+    function sendWhatsAppMessage(productName) {
+      const phone = '254713171865'; // Updated phone number without the leading zero
+      const message = encodeURIComponent(
+        `Hello, I am interested in ordering the product: ${productName}. Please provide more details.`
+      );
+      const url = `https://wa.me/${phone}?text=${message}`;
+      window.open(url, '_blank');
+    }
+  </script>
+</body>
+</html>
