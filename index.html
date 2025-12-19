@@ -1,154 +1,172 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abdihakim Nur Resume</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f8fc;
-      color: #333;
-    }
-    .resume {
-      max-width: 900px;
-      margin: 30px auto;
-      background: #fff;
-      padding: 40px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-      border-radius: 8px;
-    }
-    header {
-      text-align: center;
-      border-bottom: 2px solid #0073e6;
-      padding-bottom: 20px;
-    }
-    header img {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 10px;
-    }
-    header h1 {
-      margin-bottom: 5px;
-      font-size: 32px;
-      color: #0073e6;
-    }
-    header p {
-      margin: 2px 0;
-    }
-    h2 {
-      color: #0073e6;
-      border-bottom: 1px solid #0073e6;
-      padding-bottom: 5px;
-      margin-top: 40px;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    .section {
-      margin-top: 20px;
-    }
-    .job, .school, .referee {
-      margin-bottom: 15px;
-    }
-    .job ul {
-      margin-top: 10px;
-    }
-    .label {
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-  <div class="resume">
-    <header>
-      <img src="https://via.placeholder.com/120" alt="Abdihakim Nur Photo" />
-      <h1>Abdihakim Nur Adan</h1>
-      <p><strong>Town Planner</strong></p>
-      <p>+254 722 483 915 | abdihakimnur60@gmail.com</p>
-      <p>DD PLAZA, Nairobi, Kenya | www.reallygreatsite.com</p>
-    </header>
+        import { motion } from "framer-motion";
+import { ShoppingBasket, Truck, Leaf, PhoneCall } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
-    <section class="section">
-      <h2>Profile</h2>
-      <p>I am a passionate and skilled Town Planner with strong expertise in ArcGIS, Archicad, AutoCAD, SPSS, and Adobe Illustrator. I use ArcGIS for spatial data analysis and mapping, ArchiCAD and AutoCAD for detailed planning design, SPSS for statistical analysis and research, and Adobe Illustrator to create clear, professional visual presentations. My planning approach focuses on sustainability, functionality, and data-driven decision-making to deliver efficient and inclusive urban solutions.</p>
-    </section>
+export default function VeggieWebsite() {
+  const vegetables = [
+    "Tomatoes",
+    "Kales (Sukuma)",
+    "Onions",
+    "Potatoes",
+    "Spinach",
+    "Cabbage",
+    "Carrots",
+    "Green Peppers",
+  ];
 
-    <section class="section">
-      <h2>Skills</h2>
-      <ul>
-        <li>Project Management</li>
-        <li>Public Relations</li>
-        <li>Teamwork</li>
-        <li>Time Management</li>
-        <li>Leadership</li>
-        <li>Effective Communication</li>
-        <li>Critical Thinking</li>
-      </ul>
-    </section>
+  // STRICTLY VEGETABLE IMAGES ONLY (clean + relevant)
+  const images = [
+    "https://images.unsplash.com/photo-1540420773420-3366772f4999", // tomatoes
+    "https://images.unsplash.com/photo-1582515073490-dc99d06b70a2", // onions
+    "https://images.unsplash.com/photo-1518977676601-b53f82aba655", // potatoes
+    "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce", // spinach
+    "https://images.unsplash.com/photo-1506806732259-39c2d0268443", // carrots
+    "https://images.unsplash.com/photo-1615485925600-97237c4fc1ec", // cabbage
+    "https://images.unsplash.com/photo-1601648764658-cf37e8c89b70", // sukuma / kale
+    "https://images.unsplash.com/photo-1603048719537-4e2b1b4b97c3", // green peppers
+  ];
 
-    <section class="section">
-      <h2>Languages</h2>
-      <ul>
-        <li>English (Fluent)</li>
-        <li>Swahili (Fluent)</li>
-        <li>Somali (Native)</li>
-        <li>Arabic (Basic)</li>
-      </ul>
-    </section>
+  const sendWhatsAppOrder = () => {
+    const selected = Array.from(
+      document.querySelectorAll('input[type="checkbox"]:checked')
+    ).map((i) => i.value);
 
-    <section class="section">
-      <h2>Education</h2>
-      <div class="school">
-        <p class="label">University of Nairobi</p>
-        <p>Bachelor of Arts in Planning | 2023 – 2027</p>
-      </div>
-      <div class="school">
-        <p class="label">Sabunley Secondary School</p>
-        <p>Certificate of Secondary Education | 2019 – 2022</p>
-        <p>GPA: 57 / 84 (B-)</p>
-      </div>
-    </section>
+    if (selected.length === 0) {
+      alert("Please select at least one vegetable");
+      return;
+    }
 
-    <section class="section">
-      <h2>Work Experience</h2>
-      <div class="job">
-        <p class="label">Borcelle Studio</p>
-        <p>Marketing Manager & Specialist | 2030 – Present</p>
-      </div>
-      <div class="job">
-        <p class="label">Fauget Studio</p>
-        <p>Marketing Manager & Specialist | 2025 – 2029</p>
-      </div>
-      <div class="job">
-        <p class="label">Studio Shodwe</p>
-        <p>Marketing Manager & Specialist | 2024 – 2025</p>
-        <ul>
-          <li>Developed and executed comprehensive marketing strategies.</li>
-          <li>Led a high-performing marketing team.</li>
-          <li>Maintained brand consistency across channels.</li>
-          <li>Managed marketing budgets and optimized ROI.</li>
-          <li>Conducted market research and identified trends.</li>
-          <li>Built strong agency and vendor relationships.</li>
-        </ul>
-      </div>
-    </section>
+    const msg = encodeURIComponent(
+      `Hello, I would like to order the following vegetables: ${selected.join(", ")}`
+    );
 
-    <section class="section">
-      <h2>References</h2>
-      <div class="referee">
-        <p><strong>Harper Richard</strong> – CEO, Wardiere Inc.</p>
-        <p>Phone: 123-456-7890 | Email: hello@reallygreatsite.com</p>
-      </div>
-      <div class="referee">
-        <p><strong>Estelle Darcy</strong> – CTO, Wardiere Inc.</p>
-        <p>Phone: 123-456-7890 | Email: hello@reallygreatsite.com</p>
-      </div>
-    </section>
-  </div>
-</body>
-</html>
+    window.open(`https://wa.me/254726970247?text=${msg}`, "_blank");
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-green-50 to-white text-gray-800">
+      {/* Hero */}
+      <section className="px-6 py-24 max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+            Fresh Vegetables,
+            <span className="text-green-600"> Delivered Across Nairobi</span>
+          </h1>
+          <p className="mt-6 text-lg text-gray-600">
+            Skip overpriced markets and unreliable vendors. Order clean, fresh vegetables directly via WhatsApp.
+          </p>
+          <div className="mt-8 flex gap-4">
+            <Button className="bg-green-600 hover:bg-green-700">Order Now</Button>
+            <Button variant="outline">Become a Vendor</Button>
+          </div>
+        </motion.div>
+
+        <div className="grid grid-cols-2 gap-4">
+          {images.slice(0, 4).map((img, i) => (
+            <img
+              key={i}
+              src={img}
+              alt="Fresh vegetable"
+              className="rounded-2xl h-56 w-full object-cover shadow"
+            />
+          ))}
+        </div>
+      </section>
+
+      {/* Gallery */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center">Fresh from Kenyan Farms</h2>
+          <p className="text-center text-gray-600 mt-4">
+            Only fresh vegetables — no mixed produce, no distractions
+          </p>
+          <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6">
+            {images.map((img, i) => (
+              <div key={i} className="rounded-2xl overflow-hidden shadow">
+                <img
+                  src={img}
+                  alt="Vegetable"
+                  className="w-full h-48 object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="py-24 bg-green-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center">Why Nairobi Loves Us</h2>
+          <div className="mt-12 grid md:grid-cols-4 gap-8">
+            <Feature icon={<Leaf />} title="Farm Fresh" desc="Direct from trusted farmers." />
+            <Feature icon={<Truck />} title="Fast Delivery" desc="Same-day delivery available." />
+            <Feature icon={<ShoppingBasket />} title="Fair Prices" desc="No middlemen." />
+            <Feature icon={<PhoneCall />} title="Easy Ordering" desc="WhatsApp-based orders." />
+          </div>
+        </div>
+      </section>
+
+      {/* Order */}
+      <section className="py-28 bg-gradient-to-br from-green-600 to-emerald-700 text-white">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-4xl font-bold">Order Multiple Vegetables</h2>
+          <p className="mt-4 text-green-100">
+            Select items and your order is sent instantly via WhatsApp
+          </p>
+
+          <div className="mt-10 grid md:grid-cols-3 gap-6 text-gray-800">
+            {vegetables.map((item) => (
+              <label
+                key={item}
+                className="bg-white rounded-xl p-4 flex items-center gap-3 shadow"
+              >
+                <input type="checkbox" className="scale-125" value={item} />
+                <span className="font-medium">{item}</span>
+              </label>
+            ))}
+          </div>
+
+          <Button
+            onClick={sendWhatsAppOrder}
+            className="mt-10 bg-white text-green-700 hover:bg-green-100 px-10 py-6 text-lg"
+          >
+            Order via WhatsApp
+          </Button>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-14 bg-gray-900 text-gray-300">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8 text-center md:text-left">
+          <div>
+            <h3 className="font-bold text-lg text-white">Nairobi Fresh Veggies</h3>
+            <p className="text-sm mt-2">Affordable fresh vegetables across Nairobi</p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-white">Delivery Areas</h4>
+            <p className="text-sm mt-2">Westlands, Kasarani, Rongai, Embakasi</p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-white">Order</h4>
+            <p className="text-sm mt-2">WhatsApp: +254 726 970 247</p>
+          </div>
+        </div>
+        <p className="text-center text-sm mt-10">© 2025 Nairobi Fresh Veggies</p>
+      </footer>
+    </div>
+  );
+}
+
+function Feature({ icon, title, desc }) {
+  return (
+    <Card className="rounded-2xl shadow-sm">
+      <CardContent className="p-6 text-center">
+        <div className="flex justify-center text-green-600 mb-4">{icon}</div>
+        <h3 className="font-semibold text-lg">{title}</h3>
+        <p className="text-gray-600 mt-2">{desc}</p>
+      </CardContent>
+    </Card>
+  );
+}
